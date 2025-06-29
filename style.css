@@ -1,0 +1,132 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #4b0082 0%, #8a2be2 100%); /* 深い紫のグラデーション */
+    color: #e0e0e0; /* 明るい文字色 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: backgroundAnimation 15s ease infinite; /* 背景アニメーション */
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background-color: rgba(25, 0, 50, 0.9); /* さらに濃い紫 */
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7); /* 影を強調 */
+    position: relative;
+    z-index: 10;
+    border-bottom: 3px solid #00ffff; /* シアンのアクセント */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.8em; /* さらに大きく */
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    color: #00ffff; /* シアンのタイトル */
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.6em;
+    font-weight: 300;
+    color: #a0a0a0;
+}
+
+main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 1200px; /* 幅を広げる */
+    margin: 30px auto;
+    background-color: rgba(50, 0, 100, 0.7); /* 少し透明感のあるダークパープル */
+    border-radius: 20px; /* 角を丸く */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8); /* 影をさらに強調 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* レスポンシブなグリッド */
+    gap: 35px; /* 間隔を広げる */
+    border: 1px solid rgba(0, 255, 255, 0.3); /* 薄いシアンの枠線 */
+}
+
+.member-section {
+    background-color: rgba(70, 0, 140, 0.8); /* カードの背景色を濃い紫に */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* カードの影 */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease; /* ホバーエフェクト */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 255, 255, 0.2); /* 薄いシアンの枠線 */
+}
+
+.member-section:hover {
+    transform: translateY(-15px) scale(1.02); /* 少し浮き上がり、拡大 */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.7); /* 影をさらに強調 */
+    background-color: rgba(90, 0, 180, 0.9); /* ホバーで少し明るい紫に */
+}
+
+.member-section h2 {
+    color: #00ffff; /* シアンのアクセントカラー */
+    margin-top: 0;
+    border-bottom: 4px solid #00ffff; /* 太いボーダー */
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 2em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.member-section p {
+    line-height: 1.9;
+    margin-bottom: 12px;
+    font-size: 1.15em;
+    color: #c0c0c0;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #909090; /* 暗めのグレー */
+    font-size: 1.1em;
+    background-color: rgba(25, 0, 50, 0.9); /* ヘッダーと同じ濃い紫 */
+    margin-top: auto; /* フッターを下に固定 */
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    border-top: 3px solid #00ffff; /* シアンのアクセント */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    header p {
+        font-size: 1.3em;
+    }
+
+    main {
+        padding: 25px;
+        margin: 20px auto;
+        grid-template-columns: 1fr; /* 1列表示 */
+    }
+
+    .member-section {
+        padding: 25px;
+    }
+
+    .member-section h2 {
+        font-size: 1.7em;
+    }
+
+    .member-section p {
+        font-size: 1.05em;
+    }
+}
